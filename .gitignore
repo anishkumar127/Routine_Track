@@ -9,7 +9,9 @@
 ./firebase.js
 firebase.js
 /config
+
 # testing
+
 /coverage
 
 # production
