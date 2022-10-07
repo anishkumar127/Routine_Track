@@ -4,8 +4,14 @@
 /node_modules
 /.pnp
 .pnp.js
-.firebase.js
+/config/firebase.js
+/firebase
+./firebase.js
+firebase.js
+/config
+
 # testing
+
 /coverage
 
 # production
