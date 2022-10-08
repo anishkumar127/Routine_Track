@@ -7,7 +7,7 @@ const [title,setTitle] = useState("");
 
 const handleSubmit= async(e)=>{
 e.preventDefault();
-if(title!=""){
+if(title!==""){
     await addDoc(collection(db,"routine"),{
         title,
         completed:false,

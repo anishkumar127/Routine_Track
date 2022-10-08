@@ -1,32 +1,32 @@
 import React ,{ useEffect, useState } from 'react';
 import Routine from './components/Routine';
 import RoutineList from './components/RoutineList';
-import { async } from '@firebase/util';
-import { collection, deleteDoc, onSnapshot, query,doc, QuerySnapshot, updateDoc } from 'firebase/firestore';
+import { collection, deleteDoc, onSnapshot, query,doc, updateDoc } from 'firebase/firestore';
+import { db } from './config/firebase';
 import './App.css';
 function App() {
   const [routines,setRoutines]  = useState([]);
   useEffect(()=>{
     const que = query(collection(db,"routine"));
-    const unsub = onSnapshot(que,(QuerySnapshot)=>{
+    const unsub = onSnapshot(que,(querySnapshot)=>{
       let routineArray = [];
-      QuerySnapshot.forEach((doc)=>{
+      querySnapshot.forEach((doc)=>{
         routineArray.push({...doc.data(),id:doc.id});
       });
       setRoutines(routineArray);
-    })
+    });
     return()=>unsub();
-  })
+  },[]);
 
   // handle 
   const handleEdit= async (routine, title)=>{
-    await updateRoutine(doc(db,"routine",routine.id),{
+    await updateDoc(doc(db,"routine",routine.id),{
       title:title
     });
   }
 
   const toggleComplete = async(routine)=>{
-    await updateDoc(doc(db,"routine",routine.id),{complete:!routine.complete});
+    await updateDoc(doc(db,"routine",routine.id),{completed:!routine.completed});
   }
 const handleDelete = async(id)=>{
   await deleteDoc(doc(db,"routine",id));
@@ -37,11 +37,11 @@ const handleDelete = async(id)=>{
    {/* <h1> mahadev </h1> */}
    <div className="title"><h1>Routine Track</h1></div>
    <div><Routine/></div>
-   <div className="routine_container">
+   <div className="routine-container">
     {
-      routines.map((item)=>{
-        <RoutineList key={routine.id} toggleComplete={toggleComplete} handleDelete={handleDelete} handleEdit={handleEdit}/>
-      })
+      routines.map((item)=>(
+        <RoutineList key={item.id} toggleComplete={toggleComplete} handleDelete={handleDelete} handleEdit={handleEdit}/>
+      ))
     }
    </div>
 
