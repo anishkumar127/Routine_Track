@@ -2,6 +2,7 @@ import React ,{useState} from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Routine from './Routine';
 
 const RoutineList = ({routine,toggleComplete,handleDelete,handleEdit}) => {
     const [freshTitle, setFreshTitle] = useState(routine.title);
@@ -20,7 +21,7 @@ const RoutineList = ({routine,toggleComplete,handleDelete,handleEdit}) => {
          className="list" 
         style={{textDecoration:routine.completed && "line-through"}}
         type="text"
-        value ={routine.title===""?freshTitle:routine.title}
+        value ={routine.title==="" ? freshTitle : routine.title}
         onChange={handleChange}
        />
         <div>

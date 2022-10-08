@@ -20,9 +20,7 @@ function App() {
 
   // handle 
   const handleEdit= async (routine, title)=>{
-    await updateDoc(doc(db,"routine",routine.id),{
-      title:title
-    });
+    await updateDoc(doc(db,"routine",routine.id),{title:title});
   }
 
   const toggleComplete = async(routine)=>{

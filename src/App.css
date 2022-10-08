@@ -54,12 +54,12 @@ form button:hover {
   transition: all 1s;
 }
 
-.todo_container {
+.routine-container {
   width: 50%;
   margin: 0 auto;
 }
 
-.todo {
+.routine {
   margin-top: 20px;
   background: white;
   padding: 10px 20px;
@@ -70,7 +70,7 @@ form button:hover {
   box-shadow: 1px 2px 10px #ddd;
 }
 
-.todo input {
+.routine input {
   cursor: pointer;
   width: 50%;
   border: none;
@@ -83,7 +83,7 @@ form button:hover {
 }
 
 .button-complete,
-.button-delete,
+.button-remove,
 .button-edit {
   border: none;
   outline: none;
@@ -106,7 +106,7 @@ form button:hover {
   margin-right: 10px;
 }
 
-.button-delete {
+.button-remove {
   color: rgb(255, 122, 98);
 }
 
