@@ -10,14 +10,14 @@ e.preventDefault();
 if(title!=""){
     await addDoc(collection(db,"routine"),{
         title,
-        completed:false
+        completed:false,
     });
     setTitle("");
 }
 }
   return (
     <form onSubmit={handleSubmit}>
-        <input type ={'text'} placeholder="Routine Task" value={title}
+        <input type ={'text'} placeholder="Routine Task..." value={title}
         onChange={(e)=>setTitle(e.target.value)}/>
         <button>+</button>
     </form>

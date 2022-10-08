@@ -1,5 +1,5 @@
 import React ,{useState} from 'react'
-import CheckCircleIcon from '@mui/icons-material/CheckCircleIcon';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import EditIcon from '@mui/icons-material/EdditIcon';
 import DeleteIcon from '@mui/icons-material/DeleteIcon';
 
@@ -16,7 +16,10 @@ const RoutineLIst = () => {
     }
   return (
    <div className="routine">
-        <input type="text" className="list" value ={routine.title==""?freshTitle:routine.title}
+        <input 
+        style={{textDecoration:routine.completed && "line-through"}}
+        type="text" className="list" 
+        value ={routine.title==""?freshTitle:routine.title}
         onChange={handleChange} />
         <div>
             <button className="button-complete"
