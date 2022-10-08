@@ -1,9 +1,9 @@
 import React ,{useState} from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import EditIcon from '@mui/icons-material/EdditIcon';
-import DeleteIcon from '@mui/icons-material/DeleteIcon';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const RoutineLIst = () => {
+const RoutineLIst = ({routine,toggleComplete,handleChange,handleDelete,handleEdit}) => {
     const [freshTitle, setFreshTitle] = useState(routine.title);
     const handleChange = (e) =>{
             e.preventDefault();

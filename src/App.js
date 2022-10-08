@@ -1,9 +1,9 @@
-import { async } from '@firebase/util';
-import { collection, deleteDoc, onSnapshot, query, QuerySnapshot, updateDoc } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
-import './App.css';
+import React ,{ useEffect, useState } from 'react';
 import Routine from './components/Routine';
 import RoutineList from './components/RoutineList';
+import { async } from '@firebase/util';
+import { collection, deleteDoc, onSnapshot, query,doc, QuerySnapshot, updateDoc } from 'firebase/firestore';
+import './App.css';
 function App() {
   const [routines,setRoutines]  = useState([]);
   useEffect(()=>{
