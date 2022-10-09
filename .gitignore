@@ -4,11 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-/config/firebase.js
-/firebase
-./firebase.js
-firebase.js
-/config
 
 # testing
 
