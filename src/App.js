@@ -37,8 +37,13 @@ const handleDelete = async(id)=>{
    <div><Routine/></div>
    <div className="routine-container">
     {
-      routines.map((item)=>(
-        <RoutineList key={item.id} toggleComplete={toggleComplete} handleDelete={handleDelete} handleEdit={handleEdit}/>
+      routines.map((routine)=>(
+        <RoutineList 
+        key={routine.id} 
+        routine={routine}
+        toggleComplete={toggleComplete}
+        handleDelete={handleDelete} 
+        handleEdit={handleEdit}/>
       ))
     }
    </div>
